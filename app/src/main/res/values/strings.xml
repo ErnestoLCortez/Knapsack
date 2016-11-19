@@ -3,4 +3,6 @@
 
     <string name="dummyText">000</string>
     <string name="valueText">Value: </string>
+    <string name="yourChoices">Your choices:</string>
+    <string name="betterChoices">The best choices:</string>
 </resources>
