@@ -16,12 +16,13 @@ public class DragItems extends LinearLayout {
 
         Random random = new Random();
 
-        value = random.nextInt(10)+1;
-        weight = random.nextInt(9)+1;
+        value = random.nextInt(40)+5;
+        weight = random.nextInt(10)+1;
 
-        ((TextView)getChildAt(0)).setText(value);
-        String temp = "$" + weight;
-        ((TextView)getChildAt(1)).setText(temp);
+        String temp1 = "Value: $" + value;
+        ((TextView)getChildAt(0)).setText(temp1);
+        String temp2 = "Weight: " + weight;
+        ((TextView)getChildAt(1)).setText(temp2);
     }
 
     public int getValue(){return value;}
