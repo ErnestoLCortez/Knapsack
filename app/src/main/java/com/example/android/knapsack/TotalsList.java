@@ -2,7 +2,10 @@ package com.example.android.knapsack;
 
 import java.util.LinkedList;
 
-public class TotalsList extends LinkedList {
+import static android.R.attr.y;
+
+
+public class TotalsList<E> extends LinkedList<E> {
 
     private int total;
 
@@ -11,13 +14,14 @@ public class TotalsList extends LinkedList {
         total = 0;
     }
 
-    public boolean add(Object o, int x){
-        total += x;
-        return add(o);
+
+    public boolean add(E x, int y){
+        total += y;
+        return super.add(x);
     }
 
-    public boolean remove(Object o, int x){
-        total -= x;
-        return remove(o);
+    public boolean remove(E x, int y){
+        total -= y;
+        return super.remove(x);
     }
 }
