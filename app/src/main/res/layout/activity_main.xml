@@ -48,7 +48,7 @@
 
         </com.example.android.knapsack.DragItems>
 
-        <LinearLayout
+        <com.example.android.knapsack.DragItems
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -77,9 +77,9 @@
                 android:src="@drawable/coins"
                 android:id="@+id/item2" />
 
-        </LinearLayout>
+        </com.example.android.knapsack.DragItems>
 
-        <LinearLayout
+        <com.example.android.knapsack.DragItems
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -107,9 +107,9 @@
                 android:src="@drawable/coins"
                 android:id="@+id/item3"/>
 
-        </LinearLayout>
+        </com.example.android.knapsack.DragItems>
 
-        <LinearLayout
+        <com.example.android.knapsack.DragItems
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -137,9 +137,9 @@
                 android:src="@drawable/coins"
                 android:id="@+id/item4"/>
 
-        </LinearLayout>
+        </com.example.android.knapsack.DragItems>
 
-        <LinearLayout
+        <com.example.android.knapsack.DragItems
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -167,7 +167,7 @@
                 android:src="@drawable/coins"
                 android:id="@+id/item5"/>
 
-        </LinearLayout>
+        </com.example.android.knapsack.DragItems>
 
     </LinearLayout>
 
@@ -175,7 +175,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/monsterColumn"
+        android:id="@+id/knapsackColumn"
         android:layout_weight="7"
         >
 
@@ -197,14 +197,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RESET"
-            android:onClick="resetActivity"/>
+            android:text="SUBMIT"
+            android:onClick="submitActivity"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SUBMIT"
-            android:onClick="submitActivity"/>
+            android:text="RESET"
+            android:onClick="resetActivity"/>
 
     </LinearLayout>
 </LinearLayout>

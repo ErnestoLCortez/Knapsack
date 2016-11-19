@@ -4,13 +4,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.DragEvent;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
+
+import static com.example.android.knapsack.R.id.item1;
 
 public class MainActivity extends AppCompatActivity {
 
     TotalsList<DragItems> knapsackWeight;
     TotalsList<DragItems> knapsackValue;
+    RelativeLayout knapsackColumn;
+    DragItems item1;
+    DragItems item2;
+    DragItems item3;
+    DragItems item4;
+    DragItems item5;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,9 +31,21 @@ public class MainActivity extends AppCompatActivity {
         knapsackValue = new TotalsList<>();
         knapsackWeight = new TotalsList<>();
 
+        knapsackColumn = ((RelativeLayout)findViewById(R.id.knapsackColumn));
+        knapsackColumn.setOnDragListener(new DragListener());
+
+        setDragItem(item1, R.id.item1Column);
+        setDragItem(item2, R.id.item2Column);
+        setDragItem(item3, R.id.item3Column);
+        setDragItem(item4, R.id.item4Column);
+        setDragItem(item5, R.id.item5Column);
 
     }
 
+    private void setDragItem(DragItems item, int id){
+        item = ((DragItems)findViewById(id));
+        item.initItemStats();
+    }
 
     private class DragListener implements View.OnDragListener {
 
@@ -46,15 +69,21 @@ public class MainActivity extends AppCompatActivity {
                     DragItems draggedItem = (DragItems)event.getLocalState();
                     knapsackWeight.add(draggedItem, draggedItem.getWeight());
                     knapsackValue.add(draggedItem, draggedItem.getValue());
-
+                    draggedItem.setVisibility(View.INVISIBLE);
+                    draggedItem.setEnabled(false);
                     return true;
             }
             return false;
         }
     }
 
+    public void submitActivity(){
 
+    }
 
+    public void resetActivity(){
+        onCreate(null);
+    }
 
 
 
