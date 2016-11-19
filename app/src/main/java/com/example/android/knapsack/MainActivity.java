@@ -20,6 +20,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private int findMaxValue(int capacity, int weight[], int value[], int numItems){
+        int[][] board = new int[10][5];
 
+        for(int i = 0; i <= numItems; i++){
+            for(int j = 0; j <= capacity; j++){
+                if(i == 0 || j == 0){
+                    board[i][j] = 0;
+                }else if(weight[i-1]<=j){
+                    board[i][j] = Math.max(value[i-1] + board[i-1][j-weight[i-1]], board[i-1][j]);
+                }else{
+                    board[i][j] = board[i-1][j];
+                }
+            }
+        }
+
+        return board[numItems][capacity];
+    }
 
 }
