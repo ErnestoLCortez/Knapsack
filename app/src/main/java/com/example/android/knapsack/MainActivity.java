@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 board[i][j] = Math.max(option1,option2);
                 solution[i][j] = (option2 > option1);
 
+//                My old code
 //                if(i == 0 || j == 0){
 //                    board[i][j] = 0;
 //                }else if(weight[i-1]<=j){
