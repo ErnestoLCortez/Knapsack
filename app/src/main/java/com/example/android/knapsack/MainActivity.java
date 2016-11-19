@@ -1,5 +1,6 @@
 package com.example.android.knapsack;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.DragEvent;
@@ -28,23 +29,30 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init(true);
+
+    }
+
+    private void init(boolean firstRun){
         knapsackValue = new TotalsList<>();
         knapsackWeight = new TotalsList<>();
 
         knapsackColumn = ((RelativeLayout)findViewById(R.id.knapsackColumn));
         knapsackColumn.setOnDragListener(new DragListener());
 
-        setDragItem(item1, R.id.item1Column);
-        setDragItem(item2, R.id.item2Column);
-        setDragItem(item3, R.id.item3Column);
-        setDragItem(item4, R.id.item4Column);
-        setDragItem(item5, R.id.item5Column);
-
+        setDragItem(item1, R.id.item1Column, firstRun);
+        setDragItem(item2, R.id.item2Column, firstRun);
+        setDragItem(item3, R.id.item3Column, firstRun);
+        setDragItem(item4, R.id.item4Column, firstRun);
+        setDragItem(item5, R.id.item5Column, firstRun);
     }
 
-    private void setDragItem(DragItems item, int id){
+    private void setDragItem(DragItems item, int id, boolean firstRun){
         item = ((DragItems)findViewById(id));
-        item.initItemStats();
+        item.setEnabled(true);
+        item.setVisibility(View.VISIBLE);
+        if(firstRun)
+            item.initItemStats();
     }
 
     private class DragListener implements View.OnDragListener {
@@ -77,12 +85,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void submitActivity(){
+//    public void submitActivity(View v){
+//        Intent i = new Intent(this, Results.class);
+//
+//        i.putExtra("KNAPSACKWEIGHT", knapsackWeight);
+//        i.putExtra("KNAPSACKVALUE", knapsackValue);
+//
+//        this.finish();
+//        startActivity(i);
+//    }
 
-    }
-
-    public void resetActivity(){
-        onCreate(null);
+    public void resetActivity(View v){
+        init(false);
     }
 
 
