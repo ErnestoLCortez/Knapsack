@@ -30,7 +30,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/item1ValueText"
                 android:text="@string/valueText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
 
             <TextView
@@ -38,7 +38,7 @@
                 android:layout_height="match_parent"
                 android:id="@+id/item1WeightText"
                 android:text="@string/dummyText"
-                android:gravity="center" />
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -60,14 +60,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/item2ValueText"
                 android:text="@string/valueText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/item2WeightText"
                 android:text="@string/dummyText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
 
             <ImageView
@@ -92,14 +92,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/item3ValueText"
                 android:text="@string/valueText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/item3WeightText"
                 android:text="@string/dummyText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -122,14 +122,14 @@
                 android:layout_height="match_parent"
                 android:id="@+id/item4ValueText"
                 android:text="@string/valueText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/item4WeightText"
                 android:text="@string/dummyText"
-                android:gravity="center"/>
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -151,13 +151,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/item5ValueText"
-                android:text="@string/valueText"/>
+                android:text="@string/valueText"
+                android:layout_gravity="center"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/item5WeightText"
-                android:text="@string/dummyText"/>
+                android:text="@string/dummyText"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -197,6 +199,12 @@
             android:layout_height="wrap_content"
             android:text="RESET"
             android:onClick="resetActivity"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SUBMIT"
+            android:onClick="submitActivity"/>
 
     </LinearLayout>
 </LinearLayout>
